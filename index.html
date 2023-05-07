@@ -1,35 +1,128 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
 <head>
-  <title>My first styled page</title>
+  <title> psychological test </title>
 <link rel="stylesheet" href="mystyle.css">
+<script src="psychological.js"></script>
 </head>
 
 <body>
+  <link rel="stylesheet" href="mystyle.css">Please choose based on your first instinct .
+  <h1 style="padding:20px;text-align:center"> · 心理健康测试 · </h1>
 
-<!-- Site navigation menu -->
-<ul class="navbar">
-  <li><a href="index.html">Home page</a>
-  <li><a href="musings.html">Musings</a>
-  <li><a href="town.html">My town</a>
-  <li><a href="links.html">Links</a>
-</ul>
-
-<!-- Main content -->
-<h1>My first styled page</h1>
-
-<p>Welcome to my styled page!
-
-<p>It lacks images, but at least it has style.
-And it has links, even if they don't go
-anywhere&hellip;
-
-<p>There should be more here, but I don't know
-what yet.
-
-<!-- Sign and date the page, it's only polite! -->
-<address>Made 5 April 2004<br>
-  by myself.</address>
-
+  <fieldset>
+  <h3>Single choice</h3>
+<div id="blue">
+  <form name="see">
+                  <p><b>1、你是否感到食欲不振?或情不自禁地暴饮暴食?</b></p >
+                  <p>
+                      <input onclick="begintimer()" type="radio" value="12" name="c1" />没有
+                      <input onclick="begintimer()" type="radio" value="32" name="c1" />轻度
+                      <input onclick="begintimer()" type="radio" value="32" name="c1" />中度
+                      <input onclick="begintimer()" type="radio" value="32" name="c1" />严重
+                  </p >
+                  <p><b>2、你是否患有失眠症?或整天感到体力不支，昏昏欲睡?</b></p >
+                  <p>
+                      <input type="radio" value="11" name="c2" />没有
+                      <input type="radio" value="31" name="c2" />轻度
+                      <input type="radio" value="31" name="c2" />中度
+                      <input type="radio" value="31" name="c2" />严重
+                  </p >
+                  <p><b>3、你是否丧失了对性的兴趣?</b></p >
+                  <p>
+                      <input type="radio" value="11" name="c3" />没有
+                      <input type="radio" value="31" name="c3" />轻度
+                      <input type="radio" value="31" name="c3" />中度
+                      <input type="radio" value="31" name="c3" />严重
+                  </p >
+                  <p><b>4、你是否经常担心自己的健康?</b></p >
+                  <p>
+                      <input type="radio" value="13" name="c4" />没有
+                      <input type="radio" value="33" name="c4" />轻度
+                      <input type="radio" value="33" name="c4" />中度
+                      <input type="radio" value="33" name="c4" />严重
+                  </p >
+                  <p><b>5、你是否认为生存没有价值，或生不如死?</b></p >
+                  <p>
+                      <input type="radio" value="14" name="c5" />没有
+                      <input type="radio" value="34" name="c5" />轻度
+                      <input type="radio" value="34" name="c5" />中度
+                      <input type="radio" value="34" name="c5" />严重
+                  </p >
+                  <p><b>6、你是否一直感到伤心或悲哀?</b></p >
+                  <p>
+                      <input type="radio" value="14" name="c6" />没有
+                      <input type="radio" value="34" name="c6" />轻度
+                      <input type="radio" value="34" name="c6" />中度
+                      <input type="radio" value="34" name="c6" />严重
+                  </p >
+                  <p><b>7、你是否感到前景渺茫?</b></p >
+                  <p>
+                      <input type="radio" value="14" name="c7" />没有
+                      <input type="radio" value="34" name="c7" />轻度
+                      <input type="radio" value="34" name="c7" />中度
+                      <input type="radio" value="34" name="c7" />严重
+                  </p >
+                  <p><b>8、你是否觉得自己没有价值或自以为是一一个失败者?</b></p >
+                  <p>
+                      <input type="radio" value="14" name="c8" />没有
+                      <input type="radio" value="34" name="c8" />轻度
+                      <input type="radio" value="34" name="c8" />中度
+                      <input type="radio" value="34" name="c8" />严重
+                  </p >
+                  <p><b>9、你是否觉得力不从心或自叹比不上别人?</b></p >
+                  <p>
+                      <input type="radio" value="14" name="c9" />没有
+                      <input type="radio" value="34" name="c9" />轻度
+                      <input type="radio" value="34" name="c9" />中度
+                      <input type="radio" value="34" name="c9" />严重
+                  </p >
+                  <p><b>10、你是否对任何事都自责?</b></p >
+                  <p>
+                      <input type="radio" value="14" name="c10" />没有
+                      <input type="radio" value="34" name="c10" />轻度
+                      <input type="radio" value="34" name="c10" />中度
+                      <input type="radio" value="34" name="c10" />严重
+                  </p >
+                  <p><b>11、你是否在做决定时犹豫不决?</b></p >
+                  <p>
+                      <input type="radio" value="14" name="c11" />没有
+                      <input type="radio" value="34" name="c11" />轻度
+                      <input type="radio" value="34" name="c11" />中度
+                      <input type="radio" value="34" name="c11" />严重
+                  </p >
+                  <p><b>12、这段时间你是否一直处于愤怒和不满状态?</b></p >
+                  <p>
+                      <input type="radio" value="14" name="c12" />没有
+                      <input type="radio" value="34" name="c12" />轻度
+                      <input type="radio" value="34" name="c12" />中度
+                      <input type="radio" value="34" name="c12" />严重
+                  </p >
+                  <p><b>13、你对事业、家庭、爱好或朋友是否丧失了兴趣?</b></p >
+                  <p>
+                      <input type="radio" value="14" name="c13" />没有
+                      <input type="radio" value="34" name="c13" />轻度
+                      <input type="radio" value="34" name="c13" />中度
+                      <input type="radio" value="34" name="c13" />严重
+                  </p >
+                  <p><b>14、你是否感到一蹶不振，做事情毫无动力?</b></p >
+                  <p>
+                      <input type="radio" value="14" name="c14" />没有
+                      <input type="radio" value="34" name="c14" />轻度
+                      <input type="radio" value="34" name="c14" />中度
+                      <input type="radio" value="34" name="c14" />严重
+                  </p >
+                  <p><b>15、你是否以为自己已衰老或失去魅力?</b></p >
+                  <p>
+                      <input type="radio" value="14" name="c15" />没有
+                      <input type="radio" value="34" name="c15" />轻度
+                      <input type="radio" value="34" name="c15" />中度
+                      <input type="radio" value="34" name="c15" />严重
+                  </p >
+                  <br /><br /><br />
+                  <p><input id="btn" onclick=" processForm()" type="button" value="查看测试结果" /></p >
+                  <br /><br />
+                  <p><textarea style="width: 500px" name="answer" rows="6" cols="50"></textarea></p >
+              </form>
 </body>
 </html>
