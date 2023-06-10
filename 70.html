@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QILIN70 | 祁临的幻想乐园</title>
+    <style>
+    		body {
+    			background-color: #000;
+    			overflow: hidden;
+    		}
+    		canvas {
+    			position: absolute;
+    			top: 0;
+    			left: 0;
+    			z-index: -1;
+    		}
+    	</style>
+    </head>
+    <head>
+
+   <body>
+    	<canvas id="canvas"></canvas>
+    	<script>
+    		var canvas = document.getElementById('canvas');
+    		var ctx = canvas.getContext('2d');
+    		var width = window.innerWidth;
+    		var height = window.innerHeight;
+    		canvas.width = width;
+    		canvas.height = height;
+
+    		var stars = [];
+    		var maxStars = 1000;
+    		for (var i = 0; i < maxStars; i++) {
+    			stars.push({
+    				x: Math.random() * width,
+    				y: Math.random() * height,
+    				radius: Math.random() * 1.5,
+    				speed: Math.random() * 0.5
+    			});
+    		}
+
+    		function draw() {
+    			ctx.clearRect(0, 0, width, height);
+    			ctx.fillStyle = '#fff';
+    			for (var i = 0; i < maxStars; i++) {
+    				var star = stars[i];
+    				ctx.beginPath();
+    				ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+    				ctx.fill();
+    				star.x -= star.speed;
+    				if (star.x < -star.radius) {
+    					star.x = width + star.radius;
+    				}
+    			}
+    			requestAnimationFrame(draw);
+    		}
+
+    		draw();
+    	</script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: black
+        }
+
+        h2 {
+            color: #222;
+            font-size: 100px;
+        }
+
+        h2 a {
+            text-decoration: none;
+            color: white;
+        }
+
+        h2 span {
+            transition: 0.5s;
+        }
+
+        h2:hover span:nth-child(1) {
+            margin-right: 10px;
+        }
+
+        h2:hover span:nth-child(2) {
+            margin-left: 30px;
+        }
+
+        h2 span:nth-child(1)::after {
+            opacity: 0;
+            transition: 2s;
+        }
+
+        h2:hover span:nth-child(1)::after {
+            content: "'";
+            opacity: 1;
+        }
+
+        h2:hover span {
+            color: white;
+            text-shadow: 0 0 10px #fff,
+                0 0 20px #fff,
+                0 0 40px #fff,
+                0 0 80px #fff;
+
+
+        }
+    </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <h2><span>Welcome to</span><span> QILIN</span></h2>
+    <a href="707070.html">
+        <button type="button" class="btn btn-dark btn_font" style="padding-left:3em;padding-right:3em;margin-right:1em;">Let's play</button>
+      </a>
+</div>
+<link rel="stylesheet"  href="70.css">
+</body>
+
+</html>

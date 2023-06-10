@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <title>QILIN70 | 祁临的幻想乐园</title>
+    <style>
+    		body {
+    			background-color: #000;
+    			overflow: hidden;
+    		}
+    		canvas {
+    			position: absolute;
+    			top: 0;
+    			left: 0;
+    			z-index: -1;
+    		}
+
+        body {
+          background-color: #000;
+        }
+
+        .floating-text-container {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+
+        .floating-text {
+          position: absolute;
+          font-weight: bold;
+          color: #fff;
+          opacity: 0.5;
+          animation: float 10s ease-in-out infinite;
+        }
+
+
+        </style >
+
+  </head>
+  <body>
+<canvas id="canvas"></canvas>
+<script>
+  var canvas = document.getElementById('canvas');
+  var ctx = canvas.getContext('2d');
+  var width = window.innerWidth;
+  var height = window.innerHeight;
+  canvas.width = width;
+  canvas.height = height;
+
+  var stars = [];
+  var maxStars = 1000;
+  for (var i = 0; i < maxStars; i++) {
+    stars.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      radius: Math.random() * 1.5,
+      speed: Math.random() * 0.5
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, width, height);
+    ctx.fillStyle = '#fff';
+    for (var i = 0; i < maxStars; i++) {
+      var star = stars[i];
+      ctx.beginPath();
+      ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+      ctx.fill();
+      star.x -= star.speed;
+      if (star.x < -star.radius) {
+        star.x = width + star.radius;
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+</script>
+
+<!-- 导航栏 -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#" style="max-width:120px;margin-top:0px;">
+        <img alt="Brand"  style="max-width:120px;margin-top:0px;width:60px;height:50px;" src="懒羊羊.png">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="70.html">主页<span class="sr-only">(current)</span></a >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="707070.html">QILIN</a >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="7070.html"><strong>乐园标签</strong></a >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+<!-- 漂浮框-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        span{
+            /* 让弹出来的文字不被选中，影响操作体验 */
+            user-select: none;
+            cursor: default;
+            font-size: 20px;
+            color: GhostWhite;
+            position: absolute;
+            transition: 1s;
+        }
+
+    </style>
+</head>
+<body>
+
+    <script>
+        // 设置随机出现的文字数组
+        var arr = ["白日梦想家",
+                    "不要拿MBTI pua自己，你好我是小蝴蝶",
+                    "音乐是能量源，耳机是充电器",
+                    "好想住在live house啊！！！",
+                    "极端的浪漫主义者",
+                    "不能准确描述自己的喜好，70喜欢“带感”的东西",
+                    "讨厌争吵讨厌争吵讨厌争吵",
+                    "随意点随意点",
+                    "不要对我有刻板印象，哼！！！",
+                    "永远被温柔打败",
+                    "对啊我慕强，七月份的尾巴我是狮子座",
+                    "想养猫",
+                    "如果生活不够drama我会觉得没滋味",
+                    "渴望偏爱",
+                    "在自己的小世界过得很好，但想和你一起玩",
+                    "快乐万岁",
+                    "我吃我吃我吃",
+                    ]
+        document.onclick = function(x){
+            // 创建元素节点对象
+            var span = document.createElement("span")
+            // 获取当前鼠标的坐标
+            span.style.left = x.clientX + "px"
+            span.style.top = x.clientY + "px"
+            // 让span的值为arr数组内随机的一个值
+            span.innerHTML = arr[Math.floor(Math.random()*arr.length)]
+            // 设置span的动画效果
+            setTimeout(function(){
+                span.style.opacity = "1"
+                span.style.transform = "translateY(-100px)"
+            },100)
+            setTimeout(function(){
+                span.style.opacity = "0"
+                span.style.transform = "translate(-100px,-100px)"
+            },1500)
+            // 清掉opacort为0的span
+            var chi = document.getElementsByClassName("span")
+            for(var i = 0;i<chi.length;i++){
+                if(chi[i].style.opacity === "0"){
+                    document.body.removeChild(chi[i])
+                }
+            }
+            // 将span添加到body里
+            document.body.appendChild(span)
+        }
+    </script>
+</body>
+<head>
+	<style>
+		@keyframes jump {
+			0% {
+				transform: translateY(0);
+			}
+			50% {
+				transform: translateY(-10px);
+			}
+			100% {
+				transform: translateY(0);
+			}
+		}
+
+		.text {
+			font-size: 40px;
+			font-weight: bold;
+			color: #fff;
+			text-align: center;
+			animation: jump 1s ease-in-out infinite;
+			text-shadow: 0 0 10px #fff;
+      margin-top: 250px;
+		}
+	</style>
+</head>
+<body>
+	<div class="text">点击任意位置查看乐园标签</div>
+</body>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-7ymO4nGrkm372HoSbq1OY2DP4pEZnMiA+E0F3zPr+JQQtQ82gQ1HPY3QIVtztVua" crossorigin="anonymous"></script>
+  </body>
+</html>

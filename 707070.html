@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <title>QILIN70 | 祁临的幻想乐园</title>
+    <style>
+    		body {
+    			background-color: #000;
+          background-attachment: fixed;
+    		}
+    		canvas {
+    			position:fixed;
+    			top: 0;
+    			left: 0;
+    			z-index: -1;
+    		}
+
+        .card {
+          margin:40px;
+          background-color: rgba(128, 128, 128, 0.5);
+          color: white;
+          position: relative;
+        }
+
+        .btn {
+          background-color: transparent;
+          border: none;
+          color: white;
+          cursor: pointer;
+          position: absolute;
+          right: -300px;
+          position: relative;
+          top: 0px;
+          }
+
+          .div {
+              height: 300px; /* 设置容器高度 */
+              overflow-x:hidden;
+              overflow-y: auto; /* 添加滚动条 */
+              }
+
+        </style >
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-7ymO4nGrkm372HoSbq1OY2DP4pEZnMiA+E0F3zPr+JQQtQ82gQ1HPY3QIVtztVua" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <script>
+      var canvas = document.getElementById('canvas');
+      var ctx = canvas.getContext('2d');
+      var width = window.innerWidth;
+      var height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+
+      var stars = [];
+      var maxStars = 1000;
+      for (var i = 0; i < maxStars; i++) {
+        stars.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          radius: Math.random() * 1.5,
+          speed: Math.random() * 0.5
+        });
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, width, height);
+        ctx.fillStyle = '#fff';
+        for (var i = 0; i < maxStars; i++) {
+          var star = stars[i];
+          ctx.beginPath();
+          ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+          ctx.fill();
+          star.x -= star.speed;
+          if (star.x < -star.radius) {
+            star.x = width + star.radius;
+          }
+        }
+        requestAnimationFrame(draw);
+      }
+
+      draw();
+    </script>
+
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="#" style="max-width:120px;margin-top:0px;">
+            <img alt="Brand"  style="max-width:120px;margin-top:0px;width:60px;height:50px;" src="懒羊羊.png">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="70.html">主页<span class="sr-only">(current)</span></a >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="707070.html"><strong>QILIN</strong></a >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="7070.html">乐园标签</a >
+              </li>
+            </ul>
+          </div>
+    </nav>
+
+      <!-- 轮播-->
+
+    <div class="row row-cols-1 row-cols-md-3">
+      <div class="col mb-4">
+        <div class="card h-66">
+          <img src="猫步.png" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title"><strong>猫步</strong></h5>
+            <p class="card-text">互联网产品设计</p>
+            <a href="https://www.canva.cn/design/DAFjE3xsX6s/t_JSYtyK5e5weHit3wYYaw/view?utm_content=DAFjE3xsX6s&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink" class="btn btn-primary">查看→</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col mb-4">
+        <div class="card h-66">
+          <img src="海外.png" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title"><strong>中国互联网巨头出海策略分析</strong></h5>
+            <p class="card-text">腾讯出海战略研究</p>
+              <a href="https://www.canva.cn/design/DAFkX3ee7NY/pY0X8hrxdimnN0onLACi_Q/view?utm_content=DAFkX3ee7NY&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink" class="btn btn-primary">查看→</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col mb-4">
+        <div class="card h-66">
+          <img src="dudu.png" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title"><strong>DuDu谷大屏儿童健康管理系统</strong></h5>
+            <p class="card-text">客厅场景大屏创新应用</p>
+            <a href="https://www.canva.cn/design/DAFin3iZbes/E4yDfuUE1OlG8QOb0SKKXg/view?utm_content=DAFin3iZbes&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink" class="btn btn-primary">查看→</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row row-cols-1 row-cols-md-3">
+      <div class="col mb-4">
+        <div class="card h-66">
+          <img src="连花.png" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title"><strong>连花万里长明卷</strong></h5>
+            <p class="card-text">连花清瘟胶囊年轻化营销策划案
+              <br/></p>
+            <a href="连花清瘟.pdf"class="btn btn-primary">查看→</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col mb-4">
+        <div class="card h-66">
+          <img src="市调.png" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title"><strong>药不盲用疫自消</strong></h5>
+            <p class="card-text">后疫情时代北京市大学生日常用药KAP调查及信息获取渠道研究</p>
+              <a href="药不盲用“疫”自消——后疫情时代北京市大学生日常用药KAP调查及信息获取渠道研究+报告.pdf" class="btn btn-primary">查看→</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col mb-4">
+        <div class="card h-66">
+          <img src="ynby.png" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title"><strong>食de自由</strong></h5>
+            <p class="card-text">云南白药“一刷一漱”套装营销策划案
+              <br/></p>
+            <a href="“食de自由”终版.pdf" class="btn btn-primary">查看→</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer style="width: 100%;z-index: 9999;bottom:0;background-color:#2D2D37;color:GhostWhite">
+    <div class="container footer" style="max-width: 1200px;width:100%;height: 142px;">
+        <div class="row" style="padding-top: 30px;">
+            <div class="col">
+                <p>微信：ql707070a</p>
+            </div>
+            <div class="col">
+                <p>联系电话：18872895815</p>
+                <p style="margin-top:-12px;"><span style="visibility: hidden">联系电话：</span></p>
+            </div>
+            <div class="col" style="padding-right: 1px;padding-left: 1px;">
+                <p>未完待续...</p>
+                <p style="margin-top:-12px;"><span style="visibility: hidden">祝你</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="text-center" style="background-color: #25252F;height: 30px;line-height: 30px;color: GhostWhite;font-size: 12px;">
+        <p class="mb-0" style="opacity: .4">
+            Copyright ©2020  www.xxxxx.com  ghhfdgh
+        </p>
+    </div>
+  </footer>
+
+</body>
+</html>

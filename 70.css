@@ -1,0 +1,32 @@
+container {
+  position: relative;
+  text-align: center;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 120px;
+  width: 300px;/*设置按钮宽度*/
+	color:white;/*字体颜色*/
+	background-color:transparent;/*按钮背景颜色*/
+	border-radius: 3px;/*让按钮变得圆滑一点*/
+	font-family: "黑体", sans-serif;
+	font-size: 25px;/*设置字体大小*/
+	text-align: center;/*字体居中*/
+
+}
+.clickable {
+  padding: 10px 20px;
+  background-color: #ccc;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.clickable:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
